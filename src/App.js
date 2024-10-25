@@ -1,18 +1,16 @@
-import { Switch, Route, useRouteMatch } from 'react-router-dom';
+import { Switch, Route, useRouteMatch } from "react-router-dom";
 
-import './App.css';
+import "./App.css";
 
-import Launches from './pages/Launches';
-import LaunchDetails from './pages/LaunchDetails';
+import Launches from "./pages/Launches";
+import LaunchDetails from "./pages/LaunchDetails";
 
 function App() {
-
   // You can use match for dynamic generation of urls
   // Useful when nesting long URLs (Optional for smaller applications)
   const match = useRouteMatch();
-  console.log('This provides the base URL');
+  console.log("This provides the base URL");
   console.log(match.url); // This gives us a "/" which is the base url
-
 
   return (
     <div className="App">
@@ -28,19 +26,16 @@ function App() {
             {/* This will be used to pass data from one page to the  next through the URL */}
             <LaunchDetails />
           </Route>
-          <Route exact path={match.url}>
+          <Route exact path={`${match.url}SpaceX`}>
             <Launches />
           </Route>
         </Switch>
-        
       </div>
     </div>
   );
 }
 
 export default App;
-
-
 
 /*
 
