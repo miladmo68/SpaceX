@@ -109,7 +109,7 @@ const Launches = () => {
                 <td>{launch.date_local}</td>
                 <td>
                   {/* We're passing in the unique identifier launch.id to the URL.  This will then be stored in the variable named in our App.js file called :launchId. Through the use of a new hook called useParams we will retrieve the value of this id and then pass it into the new API get request to get the specified launch details. */}
-                  <Link to={`SpaceX/launch/${launch.id}`}>Details</Link>
+                  <Link to={`launch/${launch.id}`}>Details</Link>
                 </td>
               </tr>
             ))}
